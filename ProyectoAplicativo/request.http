@@ -1,0 +1,116 @@
+//Categorias
+###
+GET http://localhost:3000/categorias HTTP/1.1
+
+###
+POST http://localhost:3000/categorias HTTP/1.1
+Content-Type: application/json
+
+{
+    "Nombre": "Analgesicos",
+    "Descripcion": "Analgesicos para bebes"
+}
+
+###
+DELETE http://localhost:3000/categorias/30 HTTP/1.1
+
+###
+PUT http://localhost:3000/categorias/30 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Nombre": "Analgesicos ",
+    "Descripcion": "Analgesicos para bebes"
+}
+
+//Farmacia
+###
+GET http://localhost:3000/farmacia HTTP/1.1
+
+###
+
+POST http://localhost:3000/farmacia HTTP/1.1
+Content-Type: application/json
+
+{
+    "Nombre": "Farmacia Patricia",
+    "Telefono": "4567",
+    "Direccion": "Calle 65 - 78"
+}
+
+###
+DELETE http://localhost:3000/farmacia/2 HTTP/1.1
+
+###
+PUT http://localhost:3000/farmacia/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Nombre": "Farmacia Patricia",
+    "Telefono": "00000",
+    "Direccion": "Calle 65b #00 - 00"
+}
+
+//Proveedor
+###
+GET http://localhost:3000/proveedor HTTP/1.1
+
+###
+
+POST http://localhost:3000/proveedor HTTP/1.1
+Content-Type: application/json
+
+{
+    "Nombre": "Proveedor 10",
+    "Cedula": "00008",
+    "Telefono": "00002",
+    "Entidad": "Entidad 10"
+}
+
+###
+DELETE http://localhost:3000/proveedor/3 HTTP/1.1
+
+###
+PUT http://localhost:3000/proveedor/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Nombre": "Proveedor 7",
+    "Cedula": "00008",
+    "Telefono": "00002",
+    "Entidad": "Entidad 10"
+}
+
+//Producto
+###
+GET http://localhost:3000/producto HTTP/1.1
+
+###
+
+POST http://localhost:3000/producto HTTP/1.1
+Content-Type: application/json
+
+{
+    "Nombre": "Analgesicos bebes",
+    "Cantidad": 200,
+    "Precio_compra": 15000,
+    "Precio_venta": 25000,
+    "Proveedor": 1,
+    "Categoria": 1
+}
+
+###
+DELETE http://localhost:3000/producto/7 HTTP/1.1
+
+###
+PUT http://localhost:3000/producto/7 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Nombre": "Inyecciones para bebes ",
+    "Cantidad": 200,
+    "Precio_compra": 150000,
+    "Precio_venta": 220000,
+    "Proveedor": 1,
+    "Categoria": 1
+}

@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    <ion-title color="primary">
+      CATEGORIA
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" name="add" (click)="openAlert()" color="success"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row> 
+    <ion-col style=color:moccasin> Nombre categoria </ion-col>
+    <ion-col style=color:moccasin> Descripcion categoria </ion-col>
+  </ion-row>
+
+  <ion-item-sliding *ngFor="let categoria of categorias; let index">
+    <ion-item>
+    <ion-label>{{categoria.Nombre}}</ion-label>
+    <ion-label>{{categoria.Descripcion}}</ion-label>
+    <ion-checkbox [checked]="categoria.completed" slot="start"></ion-checkbox>
+  </ion-item>
+  
+  <ion-item-options side="end">
+    <ion-item-option (click)="deleteCategoria(categoria.Id, index)" color="danger">
+      <ion-icon name="trash"></ion-icon>
+    </ion-item-option>
+    <ion-item-option  color="primary">
+      <ion-icon name="create"(click)="onUpdateCategoria(categoria.Id, index)" ></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+  </ion-item-sliding>
+</ion-content>
+

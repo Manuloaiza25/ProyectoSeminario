@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    <ion-title  color="primary">
+      PRODUCTO
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" name="add" (click)="openAlert()" color="success"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row> 
+    <br>
+    <ion-col style=color:moccasin> Nombre  </ion-col>
+    <ion-col style=color:moccasin> Cantidad  </ion-col>
+    <ion-col style=color:moccasin> Precio compra  </ion-col>
+    <ion-col style=color:moccasin> Precio venta  </ion-col>
+    <ion-col style=color:moccasin> Proveedor  </ion-col>
+    <ion-col style=color:moccasin> Categoria  </ion-col>
+  </ion-row>
+  <ion-item-sliding *ngFor="let producto of producto; let index">
+    <ion-item>
+    <ion-label>{{producto.Nombre}}</ion-label>
+    <ion-label>{{producto.Cantidad}}</ion-label>
+    <ion-label>{{producto.Precio_compra}}</ion-label>
+    <ion-label>{{producto.Precio_venta}}</ion-label>
+    <ion-label>{{producto.Descripcion}}</ion-label>
+    <ion-label>{{producto.Entidad}}</ion-label>
+    <ion-checkbox [checked]="producto.completed" slot="start"></ion-checkbox>
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option (click)="deleteProducto(producto.Codigo, index)" color="danger">
+      <ion-icon name="trash"></ion-icon>
+    </ion-item-option>
+    <ion-item-option  color="primary">
+      <ion-icon name="create"(click)="onUpdateProducto(producto.Codigo, index)" ></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+  </ion-item-sliding>
+</ion-content>
+
+
